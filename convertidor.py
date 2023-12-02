@@ -1,5 +1,11 @@
 import pandas as pd   #libreria para poder abrir el csv
 import chardet        #libreria para poder reconocer la codificación del csv
+"""
+En caso de no tener las librerias utilizar las siguientes instalaciones en el entorno python:
+pip install pandas
+pip install Chardet
+"""
+
 
 """ Esta parte nos sirve para poder reconocer el tipo de codificación que tiene el csv, ya que, para poder leer el documento con pandas
 es necesario conocer la codificación para hacer la conversion posteriormente"""
