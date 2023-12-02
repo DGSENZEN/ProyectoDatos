@@ -26,8 +26,11 @@
 <br>Nos daremos cuenta que fue creada con éxito si aparece así:
 ![image](https://github.com/DGSENZEN/ProyectoDatos/assets/148842609/8268a9f8-7498-4dcd-9286-01dfb80c0e60)
 ##### Ahora, sí. Para importar
-<br> > Para la importación del dataset se tuvo que realizar una modificación de la extensión .csv a .json, esto se debe a que CouchDB solo reconoce este tipo de extensión. En este cambio se utilizo un script en python llamado 'convertidor.py', el cual identifica el tipo de la codificación que tiene el csv para posteriormente hacer la conversion a json.
-<br> > Luego, ya con la extensión correcta se utilizo el script 'subirDataSet.py', con ese documento se sube el dataset a la BD, utilizando como recurso la API que tiene CouchDB. Podemos darnos cuenta que efectivamete si se realizo bien la importación ya que contiene los 500 elementos que esperabamos. 
+<br> > Para la importación del dataset se tuvo que realizar una modificación de la extensión .csv a .json, esto se debe a que CouchDB solo reconoce este tipo de extensión. En este cambio se utilizo un script en python llamado **'convertidor.py'**, el cual identifica el tipo de la codificación que tiene el csv para posteriormente hacer la conversion a json.
+<br> > Luego, ya con la extensión correcta se utilizo el script **'subirDataSet.py'**, con ese documento se sube el dataset a la BD, utilizando como recurso la API que tiene CouchDB. Podemos darnos cuenta que efectivamete si se realizo bien la importación ya que contiene los 500 elementos que esperabamos. 
+<br>
+<br> **Nota** : Dentro de cada uno de los scripts hay una descripción más detallada de cómo funciona.
+<br>
 ![image](https://github.com/DGSENZEN/ProyectoDatos/assets/148842609/398f48e6-55b2-4864-8e2f-4276ae6aba53)
 <br>
 <br>Veamos una parte de los datos que se importaron
