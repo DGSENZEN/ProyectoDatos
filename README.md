@@ -9,14 +9,14 @@
 
 1. Identificar un	dataset	de	kaggle	(https://www.kaggle.com/datasets)	que	pueda	ser	modelado	con	su	BD	NoSQL (que	no	se	haya	utilizado	durante	el	curso). 🔍
 2. Haciendo	uso	de	un	repositorio	de	Github,	documente	lo	siguiente: 📝
-   * Agregar el	archivo	del	dataset
+   * **a.** Agregar el	archivo	del	dataset
 <br> > El archivo del dataset se llama "_albums.csv_", al estar en formato **csv** para que este funcione utilizamos un programa que hicimos en **python** para convertirlo a formato **JSON** y que funcionara en el **CouchDB**, este programa se llama "_convertidor.py_", más información en su punto respectivo.
-   * Descripción	del	dataset
+   * **b.** Descripción	del	dataset
 <br> > El dataset muestra el top 500 de los albumes mejor valorados, de acuerdo con la revista Rolling Stone, este dataset muestra el puesto, nombre, año, artista, genero y subgenero de cada album en la lista.
-   * Descripción	del	diccionario	de	datos	del	dataset
-   * Descripción	del	modelado	del	dataset	según	la	BD	NoSQL
-   * Descripción	de	la	BD	NoSQL	y	las	herramientas	que	se	utilizaron.
-   * Descripción	de	la	importación	de	sus	datos.
+   * **c.** Descripción	del	diccionario	de	datos	del	dataset
+   * **d.** Descripción	del	modelado	del	dataset	según	la	BD	NoSQL
+   * **e.** Descripción	de	la	BD	NoSQL	y	las	herramientas	que	se	utilizaron.
+   * **f.** Descripción	de	la	importación	de	sus	datos.
 ##### Antes de importar 
 <br> > Antes de realizar la importación de los datos primero se tuvo que haber creado la BD, nosotros realizamos este paso de manera manual directo desde el cliente de CouchDB. Para ello, con el CouchDB instalado nos dirigimos a nuestro navegador y utilizamos la siguiente liga: [local](http://localhost:5984/_utils/#login)
 <br> Posteriormente de haber ingresado nuestro usuario y contraseña, simplemente le damos clic a la parte superior derecha del cliente donde dice 'Create Database' 
@@ -38,7 +38,7 @@
 
 
 
-   * Definir	 y	 describir	 al	 menos	 5	 sentencias	 para	 cada	 una	 de	 las operaciones	CRUD (Create,	Read,	Update,	Delete) en	la	BD.	
+   * **g.** Definir	 y	 describir	 al	 menos	 5	 sentencias	 para	 cada	 una	 de	 las operaciones	CRUD (Create,	Read,	Update,	Delete) en	la	BD.	
 3. El	 github deberá	 estar	 organizado	 de	 tal	 manera	 que	 sea	 fácil	 navegar	 o identificar	los	puntos	antes	mencionados. 🧭
 4. En	la	plataforma	Moodle	subir	la	URL	del	repositorio. ⬆️
 5. Deberán	presentar	el	trabajo	realizado	a	sus	compañeros	en	el	salón	de	clases	(verificar	tabla	de cotejo). 🎥
