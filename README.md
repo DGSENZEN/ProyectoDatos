@@ -40,12 +40,12 @@
 
 <br> En CouchDB las operaciones CRUD se realizan usando metodos **HTTP** en los documentos de la base de datos. 
 <br> > **Create** (Aqui se conocen como "POST")
-<br>   -Crear un nuevo documento con datos especificos: curl -X POST http://localhost:5984/tu_basededatos -d '{"number": 501, "year": 2010, "album": "Razor", "artist": "The Colds", "genre:" "Rock", "subgenre:" "Pop rock"}'
-<br>   -Agregar un nuevo documento con atributos unicos: curl -X POST http://localhost:5984/tu_basededatos -d '{"titulo": "Rock y más", "contenido": "Descubre la historia del rock."}'
-<br>   -Agregar un nuevo documento con atributos unicos: curl -X POST http://localhost:5984/tu_basededatos -d '{"titulo": "Rock y más", "contenido": "Descubre la historia del rock."}'
+<br> >> Crear un nuevo documento con datos especificos: curl -X POST http://localhost:5984/tu_basededatos -d '{"number": 501, "year": 2010, "album": "Razor", "artist": "The Colds", "genre:" "Rock", "subgenre:" "Pop rock"}'
+<br> >> Agregar un nuevo documento con atributos unicos: curl -X POST http://localhost:5984/tu_basededatos -d '{"titulo": "Rock y más", "contenido": "Descubre la historia del rock."}'
+<br> >> Agregar un nuevo documento con atributos unicos: curl -X POST http://localhost:5984/tu_basededatos -d '{"titulo": "Rock y más", "contenido": "Descubre la historia del rock."}'
 <br> > **Read**
 <br> > **Update**
 <br> > **Delete**
-3. El	 github deberá	 estar	 organizado	 de	 tal	 manera	 que	 sea	 fácil	 navegar	 o identificar	los	puntos	antes	mencionados. 🧭
-4. En	la	plataforma	Moodle	subir	la	URL	del	repositorio. ⬆️
-5. Deberán	presentar	el	trabajo	realizado	a	sus	compañeros	en	el	salón	de	clases	(verificar	tabla	de cotejo). 🎥
+<br> 3. El	 github deberá	 estar	 organizado	 de	 tal	 manera	 que	 sea	 fácil	 navegar	 o identificar	los	puntos	antes	mencionados. 🧭
+<br> 4. En	la	plataforma	Moodle	subir	la	URL	del	repositorio. ⬆️
+<br> 5. Deberán	presentar	el	trabajo	realizado	a	sus	compañeros	en	el	salón	de	clases	(verificar	tabla	de cotejo). 🎥
