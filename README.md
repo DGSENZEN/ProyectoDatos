@@ -7,7 +7,7 @@ Equipo: Alberto Baeza, Luis Palma, Diego Gaytan
 1. Identificar un	dataset	de	kaggle	(https://www.kaggle.com/datasets)	que	pueda	
 ser	modelado	con	su	BD	NoSQL (que	no	se	haya	utilizado	durante	el	curso).
 2. Haciendo	uso	de	un	repositorio	de	Github,	documente	lo	siguiente:
-  a. Agregar el	archivo	del	dataset
+  \n a. Agregar el	archivo	del	dataset
   b. Descripción	del	dataset
   c. Descripción	del	diccionario	de	datos	del	dataset
   d. Descripción	del	modelado	del	dataset	según	la	BD	NoSQL
