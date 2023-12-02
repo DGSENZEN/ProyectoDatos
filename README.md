@@ -20,3 +20,6 @@ identificar	los	puntos	antes	mencionados.
 4. En	la	plataforma	Moodle	subir	la	URL	del	repositorio.
 5. Deberán	presentar	el	trabajo	realizado	a	sus	compañeros	en	el	salón	de	clases	
 (verificar	tabla	de cotejo).
+
+![knorteño](https://github.com/DGSENZEN/ProyectoDatos/assets/148842609/a593ceb2-5f24-4ad9-ac77-3cb49a7f3191)
+
