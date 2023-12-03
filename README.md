@@ -15,6 +15,7 @@
 <br> > El dataset muestra el top 500 de los albumes mejor valorados, de acuerdo con la revista Rolling Stone, este dataset muestra el puesto, nombre, año, artista, genero y subgenero de cada album en la lista.
    * **c.** Descripción	del	diccionario	de	datos	del	dataset
    * **d.** Descripción	del	modelado	del	dataset	según	la	BD	NoSQL
+  <br> > Nuestra base de datos tiene documentos en los que almacena una representación de un álbum de música. Esta representación viene a estar dada por documentos **JSON** los cuales son representativos a un modelo **Clave-Valor**. Por otro lado, cada uno de estos documentos almacena la siguiente información: Number, Year, Album, Artist, Genre, y Sugenre.
    * **e.** Descripción	de	la	BD	NoSQL	y	las	herramientas	que	se	utilizaron.
    * **f.** Descripción	de	la	importación	de	sus	datos.
 ##### Antes de importar 
