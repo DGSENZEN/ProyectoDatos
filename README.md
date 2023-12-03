@@ -14,9 +14,9 @@
    * **b.** Descripción	del	dataset
 <br> > El dataset muestra el top 500 de los albumes mejor valorados, de acuerdo con la revista Rolling Stone, este dataset muestra el puesto, nombre, año, artista, genero y subgenero de cada album en la lista.
    * **c.** Descripción	del	diccionario	de	datos	del	dataset
-<br> > Usando un script de Python, se filtro la informacion y se creo un diccionario de datos en buen formato y organizado con su respectiva informacion y datos necesarios.
+<br> > Usando un script de Python, se filtro la informacion y se creo un diccionario de datos en buen formato y organizado con su respectiva informacion y datos necesarios. El archivo **dictdatos.py** es el que nos ayuda a obtener el diccionario de datos, mientras que el diccionario en si es **output_data.json** ambos se encuentran en el repositorio.
    * **d.** Descripción	del	modelado	del	dataset	según	la	BD	NoSQL
-  <br> > Nuestra base de datos tiene documentos en los que almacena una representación de un álbum de música. Esta representación viene a estar dada por documentos **JSON** los cuales son representativos a un modelo **Clave-Valor**. Por otro lado, cada uno de estos documentos almacena la siguiente información: Number, Year, Album, Artist, Genre, y Sugenre.
+  <br> > Nuestra base de datos tiene documentos en los que almacena una representación de un álbum de música. Esta representación viene a estar dada por documentos **JSON** los cuales son representativos a un modelo **Clave-Valor**. Por otro lado, cada uno de estos documentos almacena la siguiente información: Number, Year, Album, Artist, Genre, y Subgenre.
    * **e.** Descripción	de	la	BD	NoSQL	y	las	herramientas	que	se	utilizaron.
    <br> > La base de datos utilizada es **CouchDB** la cual es una base de datos orientada a documentos, que se comunica a través de ua API HTTP y almacena datos en formato **JSON**.
 <br> Por otro lado, se utilizaron herramientas externas como **Python** junto con la instalación de algunas librerías tales como **Pandas**, **CouchDB**, **JSON**, **Chardet** las cuales fueron utiles para realizar la importación del dataset. Todo este proceso fue realizado utilizando **VSCode**. Tambien se utilizo la interfaz web **Fauxton** para poder crear la DB y poder visualizar los datos.
@@ -45,13 +45,30 @@
    * **g.** Definir	 y	 describir	 al	 menos	 5	 sentencias	 para	 cada	 una	 de	 las operaciones	CRUD (Create,	Read,	Update,	Delete) en	la	BD.
 
 <br> En CouchDB las operaciones CRUD se realizan usando metodos **HTTP** en los documentos de la base de datos. 
-<br> > **Create** (Aqui se conocen como "POST")
+<br> > **Create** (Aqui se conocen como comandos "**POST**")
 <br> >> Crear un nuevo documento con datos especificos: curl -X POST http://localhost:5984/tu_basededatos -d '{"number": 501, "year": 2010, "album": "Razor", "artist": "The Colds", "genre:" "Rock", "subgenre:" "Pop rock"}'
 <br> >> Agregar un nuevo documento con atributos unicos: curl -X POST http://localhost:5984/tu_basededatos -d '{"titulo": "Rock y más", "contenido": "Descubre la historia del rock."}'
-<br> >> Agregar un nuevo documento con atributos unicos: curl -X POST http://localhost:5984/tu_basededatos -d '{"titulo": "Rock y más", "contenido": "Descubre la historia del rock."}'
-<br> > **Read**
-<br> > **Update**
+<br> >> Insertar un documento con un arreglo: curl -X POST http://localhost:5984/tu_basededatos -d '{"generos": ["rock", "pop", "hip hop"]}'
+<br> >> Crear un documento con objetos anidados: curl -X POST http://localhost:5984/tu_basededatos -d '{"artista": {"nombre": "Bob", "apellido": "dylan"}}'
+<br> >> Insertar un documento con campo booleano: curl -X POST http://localhost:5984/tu_basededatos -d '{"activo": true}'
+<br> > **Read** (Aqui se conocen como comandos "**GET**")
+<br> >> Obtener un documento especifico por su id: curl -X GET http://localhost:5984/tu_basededatos/id_deldocumento
+<br> >> Obtener todos los documentos de la base de datos: curl -X GET http://localhost:5984/tu_basededatos/_all_docs
+<br> >> Obtener documentos con caracteres/referencias especificas: curl -X GET http://localhost:5984/tu_basededatos/_design/example/_view/by_year?startkey=1950&endkey=2000 Obtiene los albumes entre los años 50s y los 2000es
+<br> >> Obtener documentos con un valor particular: curl -X GET http://localhost:5984/tu_basededatos/_design/example/_view/by_artist?key="The Beatles"
+<br> >> Obtener documentos con booleanos que sean verdad: curl -X GET http://localhost:5984/tu_basededatos/_design/example/_view/activo?key=true
+<br> > **Update** (Aqui se llaman comandos "**PUT**" / "**PATCH**")
+<br> >> Actualizar un documento: curl -X PUT http://localhost:5984/tu_basededatos/id_deldocumento -d '{"number": 499, "year": 2015, "album": "Bash", "artist": "The Colds", "genre:" "Rock", "subgenre:" "Soul rock"}'
+<br> >> Modificar un atributo especifico de un documento: curl -X PATCH http://localhost:5984/tu_basededatos/id_deldocumento -d '{"year": 32}'
+<br> >> Agregar un nuevo atributo a un documento: curl -X PUT http://localhost:5984/tu_basededatos/id_deldocumento -d '{"disquera": "Sharp Records"}'
+<br> >> Actualizar objetos anidados: curl -X PATCH http://localhost:5984/tu_basededatos/id_deldocumento -d '{"artista": {"Apellido": "Hendrix"}}'
+<br> >> Actualizar el arreglo de un documento: curl -X PATCH http://localhost:5984/tu_basededatos/id_deldocumento -d '{"generos": ["rock, nu rock, metal"]}'
 <br> > **Delete**
+<br> >> Borrar un documento especifico por su id: curl -X DELETE http://localhost:5984/tu_basededatos/id_deldocumento
+<br> >> Borrar una base de datos: curl -X DELETE http://localhost:5984/tu_basededatos
+<br> >> Borrar un atributo especifico del documento (Usando **PATCH**): curl -X PATCH http://localhost:5984/tu_basededatos/id_deldocumento -d '{"subgenero": null}'
+<br> >> Borrar attachments del documento: curl -X DELETE http://localhost:5984/tu_basededatos/id_deldocumento/nombredel_attachment
+<br> >> Purgar un documento (Se borrara permanentemente): curl -X POST http://localhost:5984/tu_basededatos/_purge -d '{"id_deldocumento": {"rev": "document_revision"}}'
 <br> 3. El	 github deberá	 estar	 organizado	 de	 tal	 manera	 que	 sea	 fácil	 navegar	 o identificar	los	puntos	antes	mencionados. 🧭
 <br> 4. En	la	plataforma	Moodle	subir	la	URL	del	repositorio. ⬆️
 <br> 5. Deberán	presentar	el	trabajo	realizado	a	sus	compañeros	en	el	salón	de	clases	(verificar	tabla	de cotejo). 🎥
