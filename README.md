@@ -18,7 +18,7 @@
   <br> > Nuestra base de datos tiene documentos en los que almacena una representación de un álbum de música. Esta representación viene a estar dada por documentos **JSON** los cuales son representativos a un modelo **Clave-Valor**. Por otro lado, cada uno de estos documentos almacena la siguiente información: Number, Year, Album, Artist, Genre, y Sugenre.
    * **e.** Descripción	de	la	BD	NoSQL	y	las	herramientas	que	se	utilizaron.
    <br> > La base de datos utilizada es **CouchDB** la cual es una base de datos orientada a documentos, que se comunica a través de ua API HTTP y almacena datos en formato **JSON**.
-<br> Por otro lado, se utilizaron herramientas externas como **Python** junto con la instalación de algunas librerías que fueron utiles para realizar la importación del dataset. Todo este proceso fue realizado utilizando **VSCode**. Tambien se utilizo la interfaz web **Fauxton** para poder crear la DB y poder visualizar los datos.
+<br> Por otro lado, se utilizaron herramientas externas como **Python** junto con la instalación de algunas librerías tales como **Pandas**, **CouchDB**, **JSON**, **Chardet** las cuales fueron utiles para realizar la importación del dataset. Todo este proceso fue realizado utilizando **VSCode**. Tambien se utilizo la interfaz web **Fauxton** para poder crear la DB y poder visualizar los datos.
 <br> **Nota:** Se utilizo esta base de datos en lugar de DynamoDB debido a que había que pagar por su uso.
 
    * **f.** Descripción	de	la	importación	de	sus	datos.
