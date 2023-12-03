@@ -7,7 +7,7 @@
 * Luis Manuel Palma Pinto 🦖
 * Diego Gaytan Bolaños 🐳
 
-1. Identificar un	dataset	de	kaggle	(https://www.kaggle.com/datasets)	que	pueda	ser	modelado	con	su	BD	NoSQL (que	no	se	haya	utilizado	durante	el	curso). 🔍
+1. Identificar un	dataset	de	kaggle	(https://www.kaggle.com/datasets)	que	pueda	ser	modelado	con	su	BD	NoSQL (que	no	se	haya	utilizado	durante	el	curso)<br> Dataset utilizado : https://www.kaggle.com/datasets/notgibs/500-greatest-albums-of-all-time-rolling-stone. 🔍
 2. Haciendo	uso	de	un	repositorio	de	Github,	documente	lo	siguiente: 📝
    * **a.** Agregar el	archivo	del	dataset
 <br> > El archivo del dataset se llama "_albums.csv_", al estar en formato **csv** para que este funcione utilizamos un programa que hicimos en **python** para convertirlo a formato **JSON** y que funcionara en el **CouchDB**, este programa se llama "_convertidor.py_", más información en su punto respectivo.
