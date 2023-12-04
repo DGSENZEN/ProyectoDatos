@@ -43,32 +43,32 @@
 <br>![image](https://github.com/DGSENZEN/ProyectoDatos/assets/148842609/3a387cbd-d786-42e7-be9e-da8605696179)
 
    * **g.** Definir	 y	 describir	 al	 menos	 5	 sentencias	 para	 cada	 una	 de	 las operaciones	CRUD (Create,	Read,	Update,	Delete) en	la	BD.
-
+<br> **IMPORTANTE**: En los codigos se usa admin:admin como un nombre predeterminado para el usuario y su contraseña, para modificarlo tendria que cambiarlo al que tiene en uso en su CouchDB.
 <br> En CouchDB las operaciones CRUD se realizan usando metodos **HTTP** en los documentos de la base de datos. 
 <br> > **Create** (Aqui se conocen como comandos "**POST**")
-<br> >> Crear un nuevo documento con datos especificos: curl -X POST http://localhost:5984/tu_basededatos -d '{"number": 501, "year": 2010, "album": "Razor", "artist": "The Colds", "genre:" "Rock", "subgenre:" "Pop rock"}'
-<br> >> Agregar un nuevo documento con atributos unicos: curl -X POST http://localhost:5984/tu_basededatos -d '{"titulo": "Rock y más", "contenido": "Descubre la historia del rock."}'
-<br> >> Insertar un documento con un arreglo: curl -X POST http://localhost:5984/tu_basededatos -d '{"generos": ["rock", "pop", "hip hop"]}'
-<br> >> Crear un documento con objetos anidados: curl -X POST http://localhost:5984/tu_basededatos -d '{"artista": {"nombre": "Bob", "apellido": "dylan"}}'
-<br> >> Insertar un documento con campo booleano: curl -X POST http://localhost:5984/tu_basededatos -d '{"activo": true}'
+<br> >> Crear un nuevo documento con datos especificos: curl -u admin:admin -X POST http://localhost:5984/albums -H "Content-Type: application/json" -d '{"number": 501, "year": 2010, "album": "Razor", "artist": "The Colds", "genre:" "Rock", "subgenre:" "Pop rock"}'
+<br> >> Agregar un nuevo documento con atributos unicos: curl -u admin:admin -X POST http://localhost:5984/albums -H "Content-Type: application/json" -d '{"titulo": "Rock y más", "contenido": "Descubre la historia del rock."}'
+<br> >> Insertar un documento con un arreglo: curl -u admin:admin -X POST http://localhost:5984/albums -H "Content-Type: application/json" -d '{"generos": ["rock", "pop", "hip hop"]}'
+<br> >> Crear un documento con objetos anidados: curl -u admin:admin -X POST http://localhost:5984/albums -H "Content-Type: application/json" -d '{"artista": {"nombre": "Bob", "apellido": "dylan"}}'
+<br> >> Insertar un documento con campo booleano: curl -u admin:admin -X POST http://localhost:5984/albums -H "Content-Type: application/json" -d '{"activo": true}'
 <br> > **Read** (Aqui se conocen como comandos "**GET**")
-<br> >> Obtener un documento especifico por su id: curl -X GET http://localhost:5984/tu_basededatos/id_deldocumento
-<br> >> Obtener todos los documentos de la base de datos: curl -X GET http://localhost:5984/tu_basededatos/_all_docs
-<br> >> Obtener documentos con caracteres/referencias especificas: curl -X GET http://localhost:5984/tu_basededatos/_design/example/_view/by_year?startkey=1950&endkey=2000 Obtiene los albumes entre los años 50s y los 2000es
-<br> >> Obtener documentos con un valor particular: curl -X GET http://localhost:5984/tu_basededatos/_design/example/_view/by_artist?key="The Beatles"
-<br> >> Obtener documentos con booleanos que sean verdad: curl -X GET http://localhost:5984/tu_basededatos/_design/example/_view/activo?key=true
+<br> >> Obtener un documento especifico por su id: curl -u admin:admin -X GET http://localhost:5984/albums/id_deldocumento
+<br> >> Obtener todos los documentos de la base de datos: curl -u admin:admin -X GET http://localhost:5984/albums/_all_docs
+<br> >> Obtener documentos con caracteres/referencias especificas: curl -u admin:admin -X GET http://localhost:5984/albums/_design/example/_view/by_year?startkey=1950&endkey=2000 Obtiene los albumes entre los años 50s y los 2000es
+<br> >> Obtener documentos con un valor particular: curl -u admin:admin -X GET http://localhost:5984/albums/_design/example/_view/by_artist?key="The Beatles"
+<br> >> Obtener documentos con booleanos que sean verdad: curl -u admin:admin -X GET http://localhost:5984/albums/_design/example/_view/activo?key=true
 <br> > **Update** (Aqui se llaman comandos "**PUT**" / "**PATCH**")
-<br> >> Actualizar un documento: curl -X PUT http://localhost:5984/tu_basededatos/id_deldocumento -d '{"number": 499, "year": 2015, "album": "Bash", "artist": "The Colds", "genre:" "Rock", "subgenre:" "Soul rock"}'
-<br> >> Modificar un atributo especifico de un documento: curl -X PATCH http://localhost:5984/tu_basededatos/id_deldocumento -d '{"year": 32}'
-<br> >> Agregar un nuevo atributo a un documento: curl -X PUT http://localhost:5984/tu_basededatos/id_deldocumento -d '{"disquera": "Sharp Records"}'
-<br> >> Actualizar objetos anidados: curl -X PATCH http://localhost:5984/tu_basededatos/id_deldocumento -d '{"artista": {"Apellido": "Hendrix"}}'
-<br> >> Actualizar el arreglo de un documento: curl -X PATCH http://localhost:5984/tu_basededatos/id_deldocumento -d '{"generos": ["rock, nu rock, metal"]}'
+<br> >> Actualizar un documento: curl -u admin:admin -X PUT http://localhost:5984/albums/id_deldocumento -H "Content-Type: application/json" -d '{"number": 499, "year": 2015, "album": "Bash", "artist": "The Colds", "genre:" "Rock", "subgenre:" "Soul rock"}'
+<br> >> Modificar un atributo especifico de un documento: curl -u admin:admin -X PATCH http://localhost:5984/albums/id_deldocumento -H "Content-Type: application/json" -d '{"year": 32}'
+<br> >> Agregar un nuevo atributo a un documento: curl -u admin:admin -X PUT http://localhost:5984/albums/id_deldocumento -H "Content-Type: application/json" -d '{"disquera": "Sharp Records"}'
+<br> >> Actualizar objetos anidados: curl -u admin:admin -X PATCH http://localhost:5984/albums/id_deldocumento -H "Content-Type: application/json" -d '{"artista": {"Apellido": "Hendrix"}}'
+<br> >> Actualizar el arreglo de un documento: curl -u admin:admin -X PATCH http://localhost:5984/albums/id_deldocumento -H "Content-Type: application/json" -d '{"generos": ["rock, nu rock, metal"]}'
 <br> > **Delete**
-<br> >> Borrar un documento especifico por su id: curl -X DELETE http://localhost:5984/tu_basededatos/id_deldocumento
-<br> >> Borrar una base de datos: curl -X DELETE http://localhost:5984/tu_basededatos
-<br> >> Borrar un atributo especifico del documento (Usando **PATCH**): curl -X PATCH http://localhost:5984/tu_basededatos/id_deldocumento -d '{"subgenero": null}'
-<br> >> Borrar attachments del documento: curl -X DELETE http://localhost:5984/tu_basededatos/id_deldocumento/nombredel_attachment
-<br> >> Purgar un documento (Se borrara permanentemente): curl -X POST http://localhost:5984/tu_basededatos/_purge -d '{"id_deldocumento": {"rev": "document_revision"}}'
+<br> >> Borrar un documento especifico por su id: curl -u admin:admin -X DELETE http://localhost:5984/albums/id_deldocumento
+<br> >> Borrar una base de datos: curl -u admin:admin -X DELETE http://localhost:5984/albums
+<br> >> Borrar un atributo especifico del documento (Usando **PATCH**): curl -u admin:admin -X PATCH http://localhost:5984/albums/id_deldocumento -H "Content-Type: application/json" -d '{"subgenero": null}'
+<br> >> Borrar attachments del documento: curl -u admin:admin -X DELETE http://localhost:5984/albums/id_deldocumento/nombredel_attachment
+<br> >> Purgar un documento (Se borrara permanentemente): curl -u admin:admin -X POST http://localhost:5984/albums/_purge -H "Content-Type: application/json" -d '{"id_deldocumento": {"rev": "document_revision"}}'
 <br> 3. El	 github deberá	 estar	 organizado	 de	 tal	 manera	 que	 sea	 fácil	 navegar	 o identificar	los	puntos	antes	mencionados. 🧭
 <br> 4. En	la	plataforma	Moodle	subir	la	URL	del	repositorio. ⬆️
 <br> 5. Deberán	presentar	el	trabajo	realizado	a	sus	compañeros	en	el	salón	de	clases	(verificar	tabla	de cotejo). 🎥
